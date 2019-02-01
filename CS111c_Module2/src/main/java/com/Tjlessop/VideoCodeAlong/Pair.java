@@ -2,7 +2,7 @@ package com.Tjlessop.VideoCodeAlong;
 
 import java.util.Objects;
 
-public class Pair<T extends Comparable<T>> implements Comparable<Pair<T> >{
+public class Pair<T extends Comparable<? super T>> implements Comparable<Pair<T> >{
 
     private T item1, item2;
 

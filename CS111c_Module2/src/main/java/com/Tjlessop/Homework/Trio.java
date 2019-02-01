@@ -122,4 +122,6 @@ public class Trio<T> {
     public int hashCode() {
         return Objects.hash(getItem1(), getItem2(), getItem3());
     }
+
+
 }//Class Trio
