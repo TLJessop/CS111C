@@ -1,4 +1,4 @@
-package com.Tljessop.VideoCodeAlong;
+package com.Tljessop.InterfacePractice;
 
 import java.util.Arrays;
 
@@ -41,11 +41,18 @@ public class BagClient {
         System.out.println(Arrays.toString(nameBag.toArray()));
         System.out.println();
 
-        nameBag.clear();
-        printStringContainingChar(nameBag,'o');
+        System.out.println(occurInBag(nameBag,"ff"));
+        System.out.println(Arrays.toString(nameBag.toArray()));
+        System.out.println();
 
+        System.out.println();
+        System.out.println();
+        System.out.println();
 
+        BagInterface<String> wordBag= new ArrayBag<>();
 
+        wordBag.add("Hi");
+        System.out.println(isSet(wordBag));
 
     }//main
 
@@ -100,5 +107,64 @@ public class BagClient {
             stringBag.add(tempBag.remove());
         }
     }
+
+    /**
+     * This method empties the given Integer bag
+     * @param quizScoreBag the Integer bag to be emptied
+     */
+    public static  void emptyBag(BagInterface<Integer> quizScoreBag){
+        while (!quizScoreBag.isEmpty()){
+            quizScoreBag.remove();
+        }
+    }
+
+    /**
+     * Counts the number of time the search word occurs in the given string bag
+     * @param wordBag The bag of strings to be searched
+     * @param searchWord The string that this method will try to find in the bag
+     * @return The number of occurrences of the search word in the string bag
+     */
+    public static int occurInBag(BagInterface<String> wordBag, String searchWord){
+        BagInterface<String> tempBag = new ArrayBag<>();
+        int occurrences =0;
+        while (!wordBag.isEmpty()){
+            String word = wordBag.remove();
+            tempBag.add(word);
+
+            if (word.equals(searchWord)){
+                occurrences++;
+            }
+        }
+
+        while (!tempBag.isEmpty()){
+            wordBag.add(tempBag.remove());
+        }
+        return occurrences;
+    }
+
+    /**
+     * This method checks for repeat words in the passed in wordBag
+     * @param wordBag The String type BagInterface object that will be checked for duplicates
+     * @return Returns true if no repeat words are found, false if the bag contains any duplicates.
+     */
+    public static boolean isSet(BagInterface<String> wordBag){
+        if(!wordBag.isEmpty()){
+            BagInterface<String> tempBag = new ArrayBag<>();
+            while (!wordBag.isEmpty()){
+                String word = wordBag.remove();
+                tempBag.add(word);
+                if(wordBag.contains(word)){
+                    return false;
+                }//test if
+            }//test while
+
+            while (!tempBag.isEmpty()){
+                wordBag.add(tempBag.remove());
+            }//refill while
+            return true;
+        } else return false;
+    }//isSet
+
+
 
 }//Class BagClient

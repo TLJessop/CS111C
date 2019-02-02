@@ -1,4 +1,4 @@
-package com.Tljessop.VideoCodeAlong;
+package com.Tljessop.InterfacePractice;
 
 import java.util.Arrays;
 import java.util.List;
@@ -71,7 +71,6 @@ public class ListClient {
         }
 
         System.out.println(Arrays.toString(scoreList.toArray()));
-
 
 
     }// main
@@ -173,6 +172,82 @@ public class ListClient {
             throw new IllegalAccessException("removeFirstLowestScore can not be used on an empty score list ");
         }
     }
+
+    /**
+     * This method takes in a word list returns a new version of said list,
+     * that  contains all the words on the original word list that are shorter than a specific length.
+     * @param wordList The word list be have a modified copy made of
+     * @param length The length that the words on the new list must be shorter than
+     * @return A new word list that contains all the words the were shorter then the specified length
+     */
+
+    public static ListInterface<String> createShortWordList(ListInterface<String> wordList, int length){
+       ListInterface<String> newList = new AList<>();
+        for (int i = 1; i <= wordList.getLength() ; i++) {
+            if (wordList.getEntry(i).length() < length ){
+                newList.add(wordList.getEntry(i));
+            }
+        }
+        return newList;
+    }//ListInterface
+
+    /**
+     * This method returns the last index of the target word in the passed String list.
+     * @param wordList The String list to be searched
+     * @param targetWord The String the the String list will be checked for
+     * @return The last index of the target word, or if the target word is not in the String list -1 will be returned
+     */
+    public static int lastPosition(List<String> wordList, String targetWord){
+        int lastIndex = -1;
+        for (int i = 0; i < wordList.size(); i++) {
+            if (wordList.get(i).equals(targetWord)){
+                 lastIndex = i;
+                }
+        }
+        return lastIndex;
+    }
+
+    /**
+     * This method test to see if a given List and ListInterface are logically equal
+     * @param numberList Integer list to be test against the Integer ListInterface
+     * @param numberListInterface Integer ListInterface to be test against the Integer list
+     * @return Returns true if the list have the same Integers in the same order and are the same length.
+     *          Otherwise returns false
+     */
+    public static boolean equivalentLists(List<Integer> numberList, ListInterface<Integer> numberListInterface){
+        boolean equivalent = false;
+
+        if(numberList.size() == numberListInterface.getLength()){
+            //Safeguard against edge case of double uninitiated lists, because the for loop will not been entered
+            if (numberList.size() == 0 && numberListInterface.getLength() == 0) return true;
+
+            for (int i =0; i < numberList.size(); i++){
+                if (numberList.get(i) == numberListInterface.getEntry(i + 1)){
+                    equivalent = true;
+                }
+            }
+        }
+        return equivalent;
+    }// equivalentLists
+
+    /**
+     * This method puts the lowest value in the list at the front.
+     * Note this is not an equivalent to sort, the positions of values greater than the minimum are not guaranteed
+     * @param numberList The Integer list that will be searched through
+     */
+    public static void prioritizeMinimumValue(List<Integer> numberList){
+       if(numberList.size()!=0) {
+           int minimum = numberList.get(0);
+           for (int i = 0; i < numberList.size(); i++) {
+               if (numberList.get(i) <= minimum) {
+                   minimum = numberList.get(i);
+                   numberList.remove(i);
+                   numberList.add(0, minimum);
+               }
+           }
+       }
+    }
+
 
 
 }//Class ListClient

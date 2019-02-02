@@ -1,4 +1,4 @@
-package com.Tljessop.VideoCodeAlong;
+package com.Tljessop.InterfacePractice;
 
 import java.util.Arrays;
 
