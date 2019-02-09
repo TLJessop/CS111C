@@ -1,7 +1,4 @@
-package com.Tljessop.InterfacePractice;
-
-import java.util.List;
-import java.util.Set;
+package com.Tljessop.VideoCodeAlong;
 
 /**
    An interface that describes the operations of a bag of objects.
@@ -51,38 +48,4 @@ public interface BagInterface<T>
 		 @return  A newly allocated array of all the entries in the bag.
                 Note: If the bag is empty, the returned array is empty. */
 	public T[] toArray();
-
-	// My additions to the interface
-
-	/**
-	 * Copies the contents of the bag into an object implementing the List abstract data type.
-	 * The choice of the specific type of list is left to the client
-	 * @return A new list that has a copy of the source bag's contents
-	 */
-	public List<T> toList();
-
-//	/**
-//	 * Copies the contents of the bag into an object implementing the Set abstract data type.
-//	 * The choice of the specific type of set is left to the client
-//	 * @return A new set that has a copy of the source bag's unique values
-//	 */
-//	public Set<T> toSet();
-
-	/**
-	 * Shrinks the bad to a specified size.
-	 * If the the bag at time of invocation holds more items then the specified size, items are removed until the number of items in the bag matches said size.
-	 * @param newSize The desired new size of the bag
-	 */
-	public void reduceBagSize(int newSize);
-
-	/**
-	 * Produces a clone of this bag
-	 * @return A new bag object that's contents are identical to this bag
-	 */
-	public BagInterface<T> CopyBag();
-
-
-
-
-
 } // end BagInterface
