@@ -31,6 +31,7 @@ public class EfficiencyExamples {
 
 	}
 	//The following three methods I wrote the functionality from Prof. Masters method headers
+
     //O(1)
 	public static int getMiddleValue(ArrayList<Integer> numberList) {
 			return numberList.get(numberList.size() / 2);
