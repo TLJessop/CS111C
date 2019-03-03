@@ -9,5 +9,6 @@
         <module name="CS111C_Module7" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="9" />
   </component>
 </project>
