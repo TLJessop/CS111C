@@ -49,16 +49,15 @@ public class EvenMoreRecursionMethods {
     }
 
     public static int arraySum(int[] nums){
-        return helperArraySum(nums, 0, 0);
+        return helperArraySum(nums, 0);
     }
 
-    private static int helperArraySum(int[] nums, int count, int sum){
-        sum += nums[count];
+    private static int helperArraySum(int[] nums, int count){
 
         if (count == nums.length - 1){
-            return sum;
+            return nums[count];
         } else {
-            return helperArraySum(nums,count+1, sum);
+            return nums[count] + helperArraySum(nums,count+1);
         }
     }
 }//EvenMoreRecursionMethods
