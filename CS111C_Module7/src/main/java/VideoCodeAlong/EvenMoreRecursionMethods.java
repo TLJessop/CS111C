@@ -18,6 +18,10 @@ public class EvenMoreRecursionMethods {
         System.out.println(arraySum(nums)+"\n");
 
         System.out.println("6 - 3 = " + recursiveSubtraction(6,3));
+
+        int fNum = 20;
+
+        System.out.println("\n" + "fibonacci " +fNum +" count is " + fibonacci(fNum));
     }//main
 
     public static int sumUp(int cap){
@@ -68,6 +72,14 @@ public class EvenMoreRecursionMethods {
             return 0;
         } else {
             return recursiveSubtraction(base-1, reduction) + 1;
+        }
+    }
+
+    public static int fibonacci(int num){
+        if (num < 2 ){
+            return num;
+        } else {
+            return fibonacci(num -1) + fibonacci(num -2);
         }
     }
 }//EvenMoreRecursionMethods
