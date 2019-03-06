@@ -15,7 +15,9 @@ public class EvenMoreRecursionMethods {
         nums[3] = 1;
         nums[4] = 1;
 
-        System.out.println(arraySum(nums));
+        System.out.println(arraySum(nums)+"\n");
+
+        System.out.println("6 - 3 = " + recursiveSubtraction(6,3));
     }//main
 
     public static int sumUp(int cap){
@@ -58,6 +60,14 @@ public class EvenMoreRecursionMethods {
             return nums[count];
         } else {
             return nums[count] + helperArraySum(nums,count+1);
+        }
+    }
+
+    public static int recursiveSubtraction(int base, int reduction){
+        if (base == reduction){
+            return 0;
+        } else {
+            return recursiveSubtraction(base-1, reduction) + 1;
         }
     }
 }//EvenMoreRecursionMethods
