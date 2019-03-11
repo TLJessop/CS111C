@@ -19,7 +19,7 @@ public class Sorts {
         int minIndex = arrayPosition;
 
         for (int i = arrayPosition + 1; i < items.length; i++) {
-            if (minObject.compareTo(items[i]) < 0 ) {
+            if (minObject.compareTo(items[i]) > 0 ) {
                 minObject = items[i];
                 minIndex = i;
             }
