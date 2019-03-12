@@ -1,5 +1,6 @@
 package VideoCodeAlong;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Sorts {
@@ -27,7 +28,21 @@ public class Sorts {
         return minIndex;
     }
 
-
+    public static <T extends Comparable<T>> void insertionSort(Comparable<T>[] items){
+        for (int i = 1; i < items.length; i++) {
+            Comparable unsortedItem = items[i];
+            int sortedTop = i-1;
+            insertHelper(unsortedItem, items, sortedTop);
+        }
+    }
+    private static <T extends Comparable<T> > void insertHelper(Comparable unsortedItem, Comparable<T>[] items, int sortedTop ){
+        int index = sortedTop;
+        while (index >= 0 && unsortedItem.compareTo(items[index]) < 0){
+            items[index + 1] = items[index];
+            index--;
+        }
+        items[index+1] =unsortedItem;
+    }
 
 
 
