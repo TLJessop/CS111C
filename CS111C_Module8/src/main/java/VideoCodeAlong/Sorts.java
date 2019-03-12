@@ -8,10 +8,10 @@ public class Sorts {
 
     public static <T extends Comparable<T>> void selectionSort(Comparable<T>[] items){
         for (int i = 0; i < items.length; i++) {
-           int indenOfMin = getMinIndex(items, i);
+           int indexOfMin = getMinIndex(items, i);
            Comparable temp = items[i];
-           items[i] = items[indenOfMin];
-           items[indenOfMin] = temp;
+           items[i] = items[indexOfMin];
+           items[indexOfMin] = temp;
         }
     }
 
