@@ -114,13 +114,10 @@ public class Node<T> {
 
         Node<Integer> currentNode = firstNode;
 
-        while (currentNode != null){
-
-            if(count % 2 !=0){
-                System.out.println(currentNode.data);
-            }
-            currentNode = currentNode.next;
-            count++;
+        Node current = first;
+        while(current.next!=null) {
+            System.out.print(current.next.data);
+            current = current.next;
         }
     }
 

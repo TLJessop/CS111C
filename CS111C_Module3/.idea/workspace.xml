@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171827f3-29b3-4344-9641-f40458838237" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/AList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/AList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS111C_Module5/src/main/java/com/Tljessop/VideoCodeAlong/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS111C_Module5/src/main/java/com/Tljessop/VideoCodeAlong/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS111C_Module7/src/main/java/HomeWork/LinkedBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS111C_Module7/src/main/java/HomeWork/LinkedBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS111C_Module7/src/main/java/VideoCodeAlong/RecursiveFileItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS111C_Module7/src/main/java/VideoCodeAlong/RecursiveFileItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS111C_Module8/src/main/java/VideoCodeAlong/SortTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS111C_Module8/src/main/java/VideoCodeAlong/SortTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS111C_Module8/src/main/java/VideoCodeAlong/Sorts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS111C_Module8/src/main/java/VideoCodeAlong/Sorts.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/BagClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
+            <state relative-caret-position="1752">
               <caret line="146" column="13" selection-start-line="144" selection-start-column="3" selection-end-line="148" selection-end-column="7" />
             </state>
           </provider>
@@ -25,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/BagInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="816">
               <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/ListInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
+            <state relative-caret-position="852">
               <caret line="71" column="19" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="68" />
             </state>
           </provider>
@@ -100,10 +107,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="992" />
-    <option name="y" value="24" />
+    <option name="x" value="432" />
+    <option name="y" value="18" />
     <option name="width" value="928" />
-    <option name="height" value="1140" />
+    <option name="height" value="750" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -111,7 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,9 +157,12 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549091207881" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CS111C_Module4" />
@@ -235,6 +244,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548959326724</updated>
+      <workItem from="1552951244690" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="Video following work for week 3. Working with provided data type interfaces">
       <created>1548990257392</created>
@@ -253,10 +263,13 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="42000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="928" height="1140" extended-state="0" />
+    <frame x="432" y="18" width="928" height="750" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39115646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39977476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -264,6 +277,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983795" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32983795" />
@@ -274,8 +289,9 @@
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.34057257" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.33953488" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32983795" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -315,6 +331,9 @@
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Video following work for week 3. Working with provided data type interfaces" />
@@ -373,14 +392,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/BagClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
+        <state relative-caret-position="1752">
           <caret line="146" column="13" selection-start-line="144" selection-start-column="3" selection-end-line="148" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/BagInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
+        <state relative-caret-position="816">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -390,7 +409,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Tljessop/InterfacePractice/ListInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
+        <state relative-caret-position="852">
           <caret line="71" column="19" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="68" />
         </state>
       </provider>

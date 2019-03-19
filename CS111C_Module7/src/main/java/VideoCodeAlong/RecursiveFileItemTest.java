@@ -63,6 +63,8 @@ public class RecursiveFileItemTest {
              ) {
             helpPrintContents(folder, indent +1);
         }
+
+
     }
 
 }//RecursiveFileItemTest

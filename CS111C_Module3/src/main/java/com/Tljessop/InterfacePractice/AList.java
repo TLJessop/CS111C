@@ -174,7 +174,10 @@ public class AList<T> implements ListInterface<T>
          list = Arrays.copyOf(list, newCapacity + 1);
       } // end if
    } // end ensureCapacity
-
+   public statice void main(String[] args){
+   AList<> list =new AList();
+   System.out.println(list.list.length);
+}
    // Makes room for a new entry at newPosition.
    // Precondition: 1 <= newPosition <= numberOfEntries + 1;
 	//               numberOfEntries is list's length before addition;
@@ -217,6 +220,8 @@ public class AList<T> implements ListInterface<T>
          throw new IllegalStateException("Attempt to create a list " +
                                          "whose capacity exceeds " +
                                          "allowed maximum.");
-   } // end checkCapacity
+   } // end checkCapacit
+
 } // end AList
+
 
