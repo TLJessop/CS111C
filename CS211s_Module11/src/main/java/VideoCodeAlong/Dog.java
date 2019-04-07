@@ -1,5 +1,7 @@
 package VideoCodeAlong;
 
+import java.util.Objects;
+
 public class Dog {
 
     //Class variable
@@ -65,6 +67,7 @@ public class Dog {
         this.vaccinated = vaccinated;
     }
 
+    //Overridden methods
     @Override
     public boolean equals(Object obj){
         if (obj == null ) return false;
@@ -72,7 +75,7 @@ public class Dog {
         if (obj.getClass() == Dog.class){
             Dog other = (Dog) obj;
 
-            if (this.name.equals(other.name) && this.breed.equals(other.breed)
+            if (this.name.equalsIgnoreCase(other.name) && this.breed.equalsIgnoreCase(other.breed)
                 && this.age == other.age && this.vaccinated == other.vaccinated){
                 return true;
             } else {
@@ -82,5 +85,11 @@ public class Dog {
             return false;
         }
     }
+
+    @Override
+    public int hashCode(){
+       return Objects.hash(name, breed, age, vaccinated);
+    }
+
 
 }//Dog
