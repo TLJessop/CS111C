@@ -3,7 +3,7 @@ package VideoCodeAlong;
 public class Dog {
 
     //Class variable
-    private static int countOfDogs;
+    private static int countOfDogs = 0;
 
     //Instance variables
     private String name, breed;
@@ -11,13 +11,17 @@ public class Dog {
     private boolean vaccinated;
 
     //Constructor
-
     public Dog(String name, String breed, int age, boolean vaccinated){
         this.age = age;
         this.name = name;
         this.breed = breed;
         this.vaccinated = vaccinated;
         countOfDogs++;
+    }
+
+    //Static method
+    public int getDogCount(){
+        return countOfDogs;
     }
 
     //Getters and Setters
@@ -60,4 +64,5 @@ public class Dog {
     public void setVaccinated(boolean vaccinated) {
         this.vaccinated = vaccinated;
     }
+
 }//Dog
