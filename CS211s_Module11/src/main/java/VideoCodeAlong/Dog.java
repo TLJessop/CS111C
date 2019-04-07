@@ -88,7 +88,7 @@ public class Dog {
 
     @Override
     public int hashCode(){
-       return Objects.hash(name, breed, age, vaccinated);
+       return Objects.hash(name.toLowerCase(), breed.toLowerCase(), age, vaccinated);
     }
 
     public int oldStyleHashCode(){
