@@ -91,5 +91,14 @@ public class Dog {
        return Objects.hash(name, breed, age, vaccinated);
     }
 
+    public int oldStyleHashCode(){
+        final int prime = 59;
+        int result = 1;
+        result = prime * result + age;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((breed == null) ? 0 : breed.hashCode());
+        result = prime * result + ((vaccinated) ? 1231 : 1237);
+        return result;
+    }
 
 }//Dog
