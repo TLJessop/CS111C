@@ -65,4 +65,22 @@ public class Dog {
         this.vaccinated = vaccinated;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null ) return false;
+        if (obj == this ) return true;
+        if (obj.getClass() == Dog.class){
+            Dog other = (Dog) obj;
+
+            if (this.name.equals(other.name) && this.breed.equals(other.breed)
+                && this.age == other.age && this.vaccinated == other.vaccinated){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
 }//Dog
