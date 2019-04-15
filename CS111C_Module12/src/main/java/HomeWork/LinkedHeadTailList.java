@@ -6,7 +6,16 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     private int numberOfEntries;
     private Node headNode;
 
+    //Constructors
+    public LinkedHeadTailList( T firstEntry){
+        headNode = new Node(firstEntry, null, null);
+        numberOfEntries = 1;
+    }
 
+    public LinkedHeadTailList(){
+        headNode = null;
+        numberOfEntries = 0;
+    }
 
 
 
