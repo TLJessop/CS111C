@@ -13,6 +13,18 @@ public class Parenthesis {
         return OPEN_PARENTHESIS.indexOf(paraChar) >=0 || CLOSED_PARENTHESIS.indexOf(paraChar) >= 0;
     }
 
+    public  static boolean isParenthesis(String paraChar){
+        return OPEN_PARENTHESIS.indexOf(paraChar) >=0 || CLOSED_PARENTHESIS.indexOf(paraChar) >= 0;
+    }
+
+    public static boolean isOpenParenthesis(String paraString){
+        return OPEN_PARENTHESIS.contains(paraString);
+    }
+
+    public static boolean isClosedParenthesis(String paraString){
+        return CLOSED_PARENTHESIS.contains(paraString);
+    }
+
     public Parenthesis(char paraChar){
         this.parenthesis = Character.toString(paraChar);
         if (isParenthesis(paraChar)){
