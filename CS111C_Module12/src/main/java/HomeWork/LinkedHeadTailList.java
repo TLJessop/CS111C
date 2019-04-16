@@ -20,7 +20,14 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
 
 
     public void addFront(T newEntry) {
-
+        if (headNode == null){
+            headNode = new Node(newEntry,null,null);
+        } else {
+            Node tempNode = headNode;
+            headNode =  new Node(newEntry,null,null);
+            headNode.next = tempNode;
+        }
+        numberOfEntries++;
     }
 
     /**
@@ -104,7 +111,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
      */
     @Override
     public int size() {
-        return 0;
+        return numberOfEntries;
     }
 
     /**
@@ -114,7 +121,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
      */
 
     public boolean isEmpty() {
-        return false;
+        return (headNode == null ) ? true : false;
     }
 
 
@@ -191,5 +198,15 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     @Override
     public int compareTo(LinkedHeadTailList<T> o) {
         return 0;
+    }
+
+    public static void main(String[] args) {
+        LinkedHeadTailList<String> test = new LinkedHeadTailList<>();
+
+        test.addFront("one");
+        test.addFront("two");
+        test.addFront("three");
+        test.addFront("four");
+
     }
 }//LinkedHeadTailList
