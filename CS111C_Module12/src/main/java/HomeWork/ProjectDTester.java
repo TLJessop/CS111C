@@ -182,7 +182,7 @@ public class ProjectDTester {
 		System.out.println("[You, did, it!, Nice, job!]\thead=You\ttail=job!");
 		System.out.println();
 		
-		/*// UNCOMMENT IF COMPLETING THE EXTRA CREDIT
+		// UNCOMMENT IF COMPLETING THE EXTRA CREDIT
 		System.out.println("\n\n********EXTRA CREDIT");
 		LinkedHeadTailList<Integer> listA = new LinkedHeadTailList<Integer>();
 		LinkedHeadTailList<Integer> listB = new LinkedHeadTailList<Integer>();
@@ -232,7 +232,7 @@ public class ProjectDTester {
 		listB.addBack(4);
 		listA.addBack(7);
 		System.out.println("Comparison result: postitive number: "+ listA.compareTo(listB));	
-		*/
+
 	}
 
 }
