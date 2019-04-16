@@ -25,6 +25,7 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         } else {
             Node tempNode = headNode;
             headNode =  new Node(newEntry,null,null);
+            tempNode.before = headNode;
             headNode.next = tempNode;
         }
         numberOfEntries++;
@@ -40,6 +41,17 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
     @Override
     public void addBack(T newEntry) {
 
+        if (headNode == null){
+            headNode = new Node(newEntry,null,null);
+        } else {
+            Node curentNode = headNode;
+            while (curentNode.next != null){
+                curentNode = curentNode.next;
+            }
+            System.out.println(curentNode.data);
+            curentNode.next = new Node(newEntry,null,curentNode);
+        }
+        numberOfEntries++;
     }
 
     /**
@@ -90,6 +102,13 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
      */
     @Override
     public void display() {
+        System.out.print("LinkedHeadList { ");
+        Node curentNode = headNode;
+        while (curentNode != null){
+            System.out.print(curentNode.data + ", ");
+            curentNode = curentNode.next;
+        }
+        System.out.println("}");
 
     }
 
@@ -207,6 +226,9 @@ public class LinkedHeadTailList<T extends Comparable<? super T>> implements Head
         test.addFront("two");
         test.addFront("three");
         test.addFront("four");
+        test.addBack("Zore");
+
+        test.display();
 
     }
 }//LinkedHeadTailList
