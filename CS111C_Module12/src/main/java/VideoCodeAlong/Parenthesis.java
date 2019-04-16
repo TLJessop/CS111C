@@ -16,7 +16,7 @@ public class Parenthesis {
     public Parenthesis(char paraChar){
         this.parenthesis = Character.toString(paraChar);
         if (isParenthesis(paraChar)){
-            if(OPEN_PARENTHESIS.indexOf(parenthesis) >= 0){
+            if(OPEN_PARENTHESIS.contains(parenthesis)){
                 open = true;
                 type = OPEN_PARENTHESIS.indexOf(parenthesis);
                 match = Character.toString(CLOSED_PARENTHESIS.charAt(type));
@@ -56,7 +56,7 @@ public class Parenthesis {
     }
 
     public boolean isMatch(Parenthesis other){
-        return other.match.equalsIgnoreCase(match);
+        return this.match.equalsIgnoreCase(other.parenthesis);
     }
 
     @Override
