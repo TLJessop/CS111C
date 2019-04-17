@@ -18,7 +18,6 @@ public class ParenthesisDriver {
         System.out.println(checkString3 + " is balanced? " + isbalanced(checkString3) + "\n");
         System.out.println(checkString4 + " is balanced? " + isbalanced(checkString4) + "\n");
         System.out.println(checkString5 + " is balanced? " + isbalanced(checkString5) + "\n");
-
     }//main
 
     public static boolean isbalanced(String checkString){
