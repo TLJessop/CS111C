@@ -5,12 +5,15 @@ import java.util.Objects;
 
 public class ArrayStack<T> implements StackInterface<T>{
 
+    //Instance data
     private int topIndex, numberOfItems;
     private T[] stack;
 
+    //Class constants
     private static final int DEFAULT_SIZE = 100;
     private static final int MIN_SIZE = 20;
 
+    //Constructors
     public ArrayStack(int numItems){
         if (numItems >= MIN_SIZE){
             stack = (T[]) new Object[numItems];
@@ -26,6 +29,7 @@ public class ArrayStack<T> implements StackInterface<T>{
         this(DEFAULT_SIZE);
     }
 
+    //Core methods
     public void push(T newEntry) {
         if (numberOfItems == stack.length - 1) {
             T[] tempArray = stack;
@@ -81,6 +85,7 @@ public class ArrayStack<T> implements StackInterface<T>{
         return numberOfItems;
     }
 
+    //Standard Object class overrides
     @Override
     public String toString(){
         StringBuilder returnString = new StringBuilder("ArrayStack [");
@@ -93,6 +98,37 @@ public class ArrayStack<T> implements StackInterface<T>{
         returnString.append("]");
 
         return returnString.toString();
+    }
+
+    @Override
+    public int hashCode(){
+        int hash = Objects.hash(numberOfItems);
+
+        for (int i = 0; i <= topIndex; i++){
+            hash += Objects.hash(stack[i]);
+        }
+
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null) return false;
+        if (obj == this ) return true;
+        if (obj.getClass() == ArrayStack.class){
+            ArrayStack<?> other = (ArrayStack<?>) obj;
+            if (this.numberOfItems != other.numberOfItems){
+                return false;
+            }
+            for (int i = 0; i <= topIndex; i++){
+                if (!stack[topIndex].equals(other.stack[other.topIndex])){
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }//ArrayStack
