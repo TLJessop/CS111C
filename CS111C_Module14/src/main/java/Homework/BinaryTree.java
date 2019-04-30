@@ -97,8 +97,23 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
 	} 
 
 	public int count(T anEntry) {
-		// YOUR CODE HERE
-		return 0;
+		return count(anEntry,root);
+	}
+
+	private int count(T target, BinaryNode node){
+		int count = 0;
+		if (node != null){
+			if (node.getData().equals(target)){
+				count++;
+			}
+			if (node.hasLeftChild()){
+				count += count(target, node.getLeftChild());
+			}
+			if (node.hasRightChild()){
+				count += count(target, node.getRightChild());
+			}
+		}
+		return count;
 	}
 
 	public Iterator<T> getPreorderIterator() {
