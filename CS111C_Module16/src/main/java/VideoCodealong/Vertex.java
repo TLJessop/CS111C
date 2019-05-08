@@ -3,6 +3,7 @@ package VideoCodealong;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Vertex <T> {
 
@@ -62,21 +63,37 @@ public class Vertex <T> {
     }
 
 
-    private class NeighborIerator implements Iterator<Vertex<T>>{
+    private class NeighborIterator implements Iterator<Vertex<T>>{
         //subclass data
         private Iterator<Edge<T>> edgeIterator;
 
+        private NeighborIterator(){
+            edgeIterator = edges.iterator();
+        }
+
         public boolean hasNext() {
-            return false;
+            return edgeIterator.hasNext();
         }
 
         public Vertex<T> next() {
-            return null;
+            Vertex<T> nextNeighbor = null;
+
+            if (edgeIterator.hasNext()){
+                Edge<T>  nextEdge = edgeIterator.next();
+                nextNeighbor = nextEdge.getEndVertex();
+
+            } else {
+                throw new NoSuchElementException();
+            }
+
+            return nextNeighbor;
         }
 
         public void remove() {
-
+            throw new UnsupportedOperationException();
         }
+
+
     }
 
 }//Vertex
