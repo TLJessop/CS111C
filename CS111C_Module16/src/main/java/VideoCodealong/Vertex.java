@@ -11,26 +11,26 @@ public class Vertex <T> {
     private boolean visted;
 
     //Constructor
-    protected Vertex(T data){
+    public Vertex(T data){
         this.data = data;
         this.edges = new ArrayList<Edge<T>>();
         visted = false;
     }
 
     //Core methods
-    protected void setData(T data){
+    public void setData(T data){
         this.data = data;
     }
 
-    protected T getData(){
+    public T getData(){
         return data;
     }
 
-    protected void addEdge(Edge<T> newEdge){
+    public void addEdge(Edge<T> newEdge){
         edges.add(newEdge);
     }
 
-    protected List<Edge<T>> getEdges(){
+    public List<Edge<T>> getEdges(){
         return new ArrayList<Edge<T>>(edges);
     }
 
