@@ -93,18 +93,10 @@ public class Vertex <T> {
 
             if (this.data.equals(other.data) && (visted == other.visted)
                 && (this.edges.size() == other.edges.size())){
-                for (int i = 0; i < edges.size(); i++){
-                    if (!edges.get(i).getEndVertex().equals(other.edges.get(i).getEndVertex()) ||
-                            (edges.get(i).getWeight() != other.edges.get(i).getWeight())){
-                        return false;
-                    }
-                }
+                    return true;
             } else {
                 return false;
             }
-
-            return true;
-
         } else {
             return false;
         }
