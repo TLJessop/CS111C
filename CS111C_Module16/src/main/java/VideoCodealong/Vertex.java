@@ -67,7 +67,8 @@ public class Vertex <T> {
     }
 
 
-    //private subclass
+    //private subclasses
+
     private class NeighborIterator implements Iterator<Vertex<T>>{
         //subclass data
         private Iterator<Edge<T>> edgeIterator;
@@ -99,6 +100,21 @@ public class Vertex <T> {
         }
 
 
+    }
+
+    private class WeightIterator implements Iterator<Double>{
+
+        public boolean hasNext() {
+            return false;
+        }
+
+        public Double next() {
+            return null;
+        }
+
+        public void remove() {
+
+        }
     }
 
 }//Vertex
