@@ -92,18 +92,23 @@ public class DirectedGraph<T> implements GraphInterface<T> {
 
             while (neighborIterator.hasNext()){
                 Vertex<T> neighbor = neighborIterator.next();
-                transOrder.add(neighbor.getData());
-                vertexQueue.add(neighbor);
+                if(!neighbor.isVisted()){
+                    neighbor.visit();
+                    transOrder.add(neighbor.getData());
+                    vertexQueue.add(neighbor);
+                }
             }
         }
         return transOrder;
     }
 
     public Queue<T> getDepthFirstTraversal(T origin) {
+        resetVertices();
         return null;
     }
 
     public Stack<T> getTopologicalOrder() {
+        resetVertices();
         return null;
     }
 
