@@ -34,6 +34,10 @@ public class Vertex <T> {
         visted = false;
     }
 
+    public boolean isVisted() {
+        return visted;
+    }
+
     public void addEdge(Edge<T> newEdge){
         edges.add(newEdge);
     }
