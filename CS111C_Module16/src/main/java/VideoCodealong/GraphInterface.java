@@ -108,7 +108,5 @@ public interface GraphInterface<T> {
 	 *         stack's top.
 	 */
 	public Stack<T> getTopologicalOrder();
-	
-	public void display();
 
 }
