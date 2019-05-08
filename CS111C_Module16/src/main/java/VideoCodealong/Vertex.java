@@ -46,6 +46,14 @@ public class Vertex <T> {
         return edges;
     }
 
+    public void connect(Vertex<T> endVertex, double weight){
+        edges.add(new Edge<T>(weight , endVertex));
+    }
+
+    public void connect(Vertex<T> endVertex){
+        edges.add(new Edge<T>(endVertex));
+    }
+
     @Override
     public String toString(){
         return data.toString();
