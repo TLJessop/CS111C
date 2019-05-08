@@ -115,7 +115,15 @@ public class Vertex <T> {
         }
 
         public Double next() {
-            return null;
+            Double nextWeight = null;
+
+            if(edgeIterator.hasNext()){
+                nextWeight = edgeIterator.next().getWeight();
+            } else {
+                throw new NoSuchElementException();
+            }
+
+            return nextWeight;
         }
 
         public void remove() {
