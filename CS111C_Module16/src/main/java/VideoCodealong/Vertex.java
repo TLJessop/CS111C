@@ -103,6 +103,12 @@ public class Vertex <T> {
     }
 
     private class WeightIterator implements Iterator<Double>{
+        //Subclass data
+        private Iterator<Edge<T>> edgeIterator;
+
+        private WeightIterator(){
+            edgeIterator = edges.iterator();
+        }
 
         public boolean hasNext() {
             return false;
