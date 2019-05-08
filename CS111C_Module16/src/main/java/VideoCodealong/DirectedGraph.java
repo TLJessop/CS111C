@@ -1,9 +1,6 @@
 package VideoCodealong;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class DirectedGraph<T> implements GraphInterface<T> {
 
@@ -42,7 +39,21 @@ public class DirectedGraph<T> implements GraphInterface<T> {
     }
 
     public boolean hasEdge(T begin, T end) {
-        return false;
+        boolean foundIt = false;
+        Vertex<T> beginVert = vertexes.get(begin);
+        Vertex<T> endVert = vertexes.get(end);
+
+        if (beginVert != null && endVert != null){
+            Iterator<Vertex<T>> neighborIterator = beginVert.getNeighborIterator();
+            while (neighborIterator.hasNext() && !foundIt){
+                Vertex<T> neighbor = neighborIterator.next();
+                if (endVert.equals(neighbor)){
+                    foundIt = true;
+                }
+            }
+        }
+
+        return foundIt;
     }
 
     public boolean isEmpty() {
