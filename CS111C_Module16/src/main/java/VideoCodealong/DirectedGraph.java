@@ -73,6 +73,13 @@ public class DirectedGraph<T> implements GraphInterface<T> {
         edgeCount = 0;
     }
 
+    protected void resetVertices(){
+        Iterator<Vertex<T>> vertexIterator = vertexes.values().iterator();
+        while (vertexIterator.hasNext()){
+            vertexIterator.next().unvisit();
+        }
+    }
+
     public Queue<T> getBreadthFirstTraversal(T origin) {
         return null;
     }
