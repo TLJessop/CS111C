@@ -67,6 +67,7 @@ public class Vertex <T> {
     }
 
 
+    //private subclass
     private class NeighborIterator implements Iterator<Vertex<T>>{
         //subclass data
         private Iterator<Edge<T>> edgeIterator;
