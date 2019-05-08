@@ -1,9 +1,14 @@
 package VideoCodealong;
 
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
 public class DirectedGraph<T> implements GraphInterface<T> {
+
+    //Instance data
+    private Map<T, Vertex<T>> vertexes;
+    private int vertCount;
 
 
     public boolean addVertex(T vertexLabel) {
