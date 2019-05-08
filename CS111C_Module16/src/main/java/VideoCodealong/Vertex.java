@@ -8,11 +8,13 @@ public class Vertex <T> {
     //Instance data
     private T data;
     private List<Edge<T>> edges;
+    private boolean visted;
 
     //Constructor
     protected Vertex(T data){
         this.data = data;
         this.edges = new ArrayList<Edge<T>>();
+        visted = false;
     }
 
     //Core methods
