@@ -9,12 +9,12 @@ public class DirectedGraph<T> implements GraphInterface<T> {
 
     //Instance data
     private Map<T, Vertex<T>> vertexes;
-    private int vertCount;
+    private int edgeCount;
 
     //Constructor
     public DirectedGraph(){
         vertexes = new HashMap<T, Vertex<T>>();
-        vertCount = 0;
+        edgeCount = 0;
     }
 
 
@@ -24,11 +24,21 @@ public class DirectedGraph<T> implements GraphInterface<T> {
     }
 
     public boolean addEdge(T begin, T end, double edgeWeight) {
-        return false;
+        boolean result = false;
+        Vertex<T> beginVert = vertexes.get(begin);
+        Vertex<T> endVert = vertexes.get(end);
+
+        if (beginVert != null && endVert != null){
+            beginVert.connect(endVert, edgeWeight);
+            edgeCount ++;
+            result = true;
+        }
+
+        return result;
     }
 
     public boolean addEdge(T begin, T end) {
-        return false;
+        return addEdge(begin,end,0);
     }
 
     public boolean hasEdge(T begin, T end) {
@@ -36,19 +46,20 @@ public class DirectedGraph<T> implements GraphInterface<T> {
     }
 
     public boolean isEmpty() {
-        return false;
+        return vertexes.isEmpty();
     }
 
     public int getNumberOfVertices() {
-        return 0;
+        return vertexes.size();
     }
 
     public int getNumberOfEdges() {
-        return 0;
+        return edgeCount;
     }
 
     public void clear() {
-
+        vertexes.clear();
+        edgeCount = 0;
     }
 
     public Queue<T> getBreadthFirstTraversal(T origin) {
