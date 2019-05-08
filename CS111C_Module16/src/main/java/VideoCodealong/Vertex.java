@@ -42,6 +42,7 @@ public class Vertex <T> {
         return edges;
     }
 
+    //Unlike the professor's version I am going to allow cyclic graphs thus there is no check againist itself
     public void connect(Vertex<T> endVertex, double weight){
         edges.add(new Edge<T>(weight , endVertex));
     }
