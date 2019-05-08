@@ -51,6 +51,10 @@ public class Vertex <T> {
         edges.add(new Edge<T>(endVertex));
     }
 
+    public boolean hasNeighbor(){
+        return !edges.isEmpty();
+    }
+
     @Override
     public String toString(){
         return data.toString();
