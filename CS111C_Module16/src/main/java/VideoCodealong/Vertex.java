@@ -38,10 +38,6 @@ public class Vertex <T> {
         return visted;
     }
 
-    public void addEdge(Edge<T> newEdge){
-        edges.add(newEdge);
-    }
-
     public List<Edge<T>> getEdges(){
         return edges;
     }
