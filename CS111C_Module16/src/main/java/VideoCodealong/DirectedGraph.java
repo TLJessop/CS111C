@@ -19,7 +19,8 @@ public class DirectedGraph<T> implements GraphInterface<T> {
 
 
     public boolean addVertex(T vertexLabel) {
-        return false;
+        Vertex<T> result = vertexes.put(vertexLabel, new Vertex<T>(vertexLabel));
+        return result == null;
     }
 
     public boolean addEdge(T begin, T end, double edgeWeight) {
