@@ -1,5 +1,6 @@
 package VideoCodealong;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -58,6 +59,24 @@ public class Vertex <T> {
     @Override
     public String toString(){
         return data.toString();
+    }
+
+
+    private class NeighborIerator implements Iterator<Vertex<T>>{
+        //subclass data
+        private Iterator<Edge<T>> edgeIterator;
+
+        public boolean hasNext() {
+            return false;
+        }
+
+        public Vertex<T> next() {
+            return null;
+        }
+
+        public void remove() {
+
+        }
     }
 
 }//Vertex
