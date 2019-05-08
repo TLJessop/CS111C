@@ -99,6 +99,7 @@ public class DirectedGraph<T> implements GraphInterface<T> {
                 }
             }
         }
+        resetVertices();
         return transOrder;
     }
 
@@ -126,7 +127,7 @@ public class DirectedGraph<T> implements GraphInterface<T> {
                 vertexStack.pop();
             }
         }
-
+        resetVertices();
         return transOrder;
     }
 
@@ -139,7 +140,7 @@ public class DirectedGraph<T> implements GraphInterface<T> {
             next.visit();
             vertStack.push(next.getData());
         }
-
+        resetVertices();
         return vertStack;
     }
 
