@@ -46,5 +46,9 @@ public class Vertex <T> {
         return edges;
     }
 
+    @Override
+    public String toString(){
+        return data.toString();
+    }
 
 }//Vertex
