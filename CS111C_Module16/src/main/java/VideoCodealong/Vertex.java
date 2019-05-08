@@ -65,6 +65,19 @@ public class Vertex <T> {
         return new WeightIterator();
     }
 
+    public Vertex<T> getUnvistedNeighbor(){
+        Vertex<T> result = null;
+        Iterator<Vertex<T>> neighborIterator = new NeighborIterator();
+
+        while ((neighborIterator.hasNext()) && (result == null)){
+            Vertex<T> nextVert = neighborIterator.next();
+            if (nextVert.visted == false){
+                result = nextVert;
+            }
+        }
+        return result;
+    }
+
     @Override
     public String toString(){
         return data.toString();
