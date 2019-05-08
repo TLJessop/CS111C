@@ -1,6 +1,6 @@
 package VideoCodealong;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Vertex <T> {
@@ -13,7 +13,7 @@ public class Vertex <T> {
     //Constructor
     public Vertex(T data){
         this.data = data;
-        this.edges = new ArrayList<Edge<T>>();
+        this.edges = new LinkedList<Edge<T>>();
         visted = false;
     }
 
@@ -43,7 +43,7 @@ public class Vertex <T> {
     }
 
     public List<Edge<T>> getEdges(){
-        return new ArrayList<Edge<T>>(edges);
+        return edges;
     }
 
 
