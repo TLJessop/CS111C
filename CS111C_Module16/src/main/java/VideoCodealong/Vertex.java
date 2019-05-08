@@ -111,7 +111,7 @@ public class Vertex <T> {
         }
 
         public boolean hasNext() {
-            return false;
+            return edgeIterator.hasNext();
         }
 
         public Double next() {
@@ -119,7 +119,7 @@ public class Vertex <T> {
         }
 
         public void remove() {
-
+            throw new UnsupportedOperationException();
         }
     }
 
