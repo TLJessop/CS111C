@@ -127,13 +127,20 @@ public class DirectedGraph<T> implements GraphInterface<T> {
             }
         }
 
-
         return transOrder;
     }
 
     public Stack<T> getTopologicalOrder() {
         resetVertices();
-        return null;
+        Stack<T> vertStack = new Stack<T>();
+        int numVert = vertexes.size();
+        for (int i = 1; i <= numVert ; i++) {
+            Vertex<T> next = findTerminal();
+            next.visit();
+            vertStack.push(next.getData());
+        }
+
+        return vertStack;
     }
 
     //Helper methods
