@@ -73,13 +73,6 @@ public class DirectedGraph<T> implements GraphInterface<T> {
         edgeCount = 0;
     }
 
-    protected void resetVertices(){
-        Iterator<Vertex<T>> vertexIterator = vertexes.values().iterator();
-        while (vertexIterator.hasNext()){
-            vertexIterator.next().unvisit();
-        }
-    }
-
     public Queue<T> getBreadthFirstTraversal(T origin) {
         resetVertices();
         Queue<T> transOrder = new LinkedList<T>();
@@ -103,8 +96,6 @@ public class DirectedGraph<T> implements GraphInterface<T> {
                 vertexQueue.add(neighbor);
             }
         }
-
-
         return transOrder;
     }
 
@@ -114,5 +105,33 @@ public class DirectedGraph<T> implements GraphInterface<T> {
 
     public Stack<T> getTopologicalOrder() {
         return null;
+    }
+
+    //Helper methods
+
+    protected void resetVertices(){
+        Iterator<Vertex<T>> vertexIterator = vertexes.values().iterator();
+        while (vertexIterator.hasNext()){
+            vertexIterator.next().unvisit();
+        }
+    }
+
+    protected Vertex<T> findTerminal(){
+        boolean found = false;
+        Vertex<T> result = null;
+
+        Iterator<Vertex<T>> vertexIterator = vertexes.values().iterator();
+
+        while (!found && vertexIterator.hasNext()){
+            Vertex<T> nextVert = vertexIterator.next();
+
+            if (!nextVert.isVisted()){
+                if (nextVert.getUnvistedNeighbor() == null){
+                    found = true;
+                    result = nextVert;
+                }
+            }
+        }
+        return result;
     }
 }//DirectedGraph
