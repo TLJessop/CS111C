@@ -26,6 +26,14 @@ public class Vertex <T> {
         return data;
     }
 
+    public void visit(){
+        visted = true;
+    }
+
+    public void unvisit(){
+        visted = false;
+    }
+
     public void addEdge(Edge<T> newEdge){
         edges.add(newEdge);
     }
