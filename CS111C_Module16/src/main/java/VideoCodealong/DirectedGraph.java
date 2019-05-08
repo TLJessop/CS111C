@@ -1,5 +1,6 @@
 package VideoCodealong;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
@@ -9,6 +10,12 @@ public class DirectedGraph<T> implements GraphInterface<T> {
     //Instance data
     private Map<T, Vertex<T>> vertexes;
     private int vertCount;
+
+    //Constructor
+    public DirectedGraph(){
+        vertexes = new HashMap<T, Vertex<T>>();
+        vertCount = 0;
+    }
 
 
     public boolean addVertex(T vertexLabel) {
