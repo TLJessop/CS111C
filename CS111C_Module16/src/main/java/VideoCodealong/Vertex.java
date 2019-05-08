@@ -61,6 +61,10 @@ public class Vertex <T> {
         return new NeighborIterator();
     }
 
+    public Iterator<Double> getWeightIterator(){
+        return new WeightIterator();
+    }
+
     @Override
     public String toString(){
         return data.toString();
