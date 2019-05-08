@@ -57,6 +57,10 @@ public class Vertex <T> {
         return !edges.isEmpty();
     }
 
+    public Iterator<Vertex<T>> getNeighborIterator(){
+        return new NeighborIterator();
+    }
+
     @Override
     public String toString(){
         return data.toString();
