@@ -64,7 +64,6 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 				count++;
 			}
 
-
 			if(currentNode.hasLeftChild() && currentNode.getData().compareTo(target) >= 0){
 				currentNode = currentNode.getLeftChild();
 			} else if (currentNode.hasRightChild() && currentNode.getData().compareTo(target) < 0){
@@ -130,9 +129,24 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR EXTRA CREDIT CODE HERE! THIS METHOD MUST BE O(n). 
 	// YOU ARE ALLOWED TO USE A HELPER METHOD. THE METHOD CAN BE ITERATIVE OR RECURSIVE. 
 	public int countUniqueValues() {
-		return 0;
+	    Set<T> foundValues = new HashSet<>();
+        ArrayDeque<BinaryNode<T>> nodeDeque = new ArrayDeque<>();
+
+        nodeDeque.push(getRootNode());
+        while (!nodeDeque.isEmpty()){
+            BinaryNode<T> currentNode = nodeDeque.pop();
+            if (currentNode.hasRightChild()){
+                nodeDeque.push(currentNode.getRightChild());
+            }
+            if (currentNode.hasLeftChild()){
+                nodeDeque.push(currentNode.getLeftChild());
+            }
+            foundValues.add(currentNode.getData());
+        }
+
+		return foundValues.size();
 	}
-	
+
 	
 	
 	
