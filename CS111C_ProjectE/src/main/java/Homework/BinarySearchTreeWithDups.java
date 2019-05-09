@@ -80,15 +80,24 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR CODE HERE! MUST BE RECURSIVE! YOU ARE ALLOWED TO CREATE A PRIVATE HELPER.
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
 	public int countGreaterRecursive(T target) {
-		// this initial code is meant as a suggestion to get your started- use it or delete it!
-		int count = 0;
-		BinaryNode<T> rootNode = getRootNode();
-		
-		// consider a helper method!
-		
-		return count;
+		return countGreaterHelper(target,getRootNode());
 	}
-		
+
+	private int countGreaterHelper(T target, BinaryNode<T> node){
+		int result = 0;
+		if (node.hasRightChild()){
+			result += countGreaterHelper( target,node.getRightChild());
+		}
+
+		if (node.getData().compareTo(target) > 0){
+			if (node.hasLeftChild()){
+				result += countGreaterHelper(target, node.getLeftChild());
+			}
+			result++;
+		}
+		return result;
+	}
+
 	// YOUR CODE HERE! MUST USE A STACK!! MUST NOT BE RECURSIVE! 
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
 	public int countGreaterWithStack(T target) {
@@ -97,8 +106,24 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		BinaryNode<T> rootNode = getRootNode();
 		Stack<BinaryNode<T>> nodeStack = new Stack<BinaryNode<T>>();
 		nodeStack.push(rootNode);
+		while (!nodeStack.isEmpty()){
+			BinaryNode<T> currentNode = nodeStack.pop();
 
-		// consider a loop based on the stack!
+			if (currentNode.getData().compareTo(target) < 0 &&
+					currentNode.hasRightChild()) {
+				nodeStack.push(currentNode.getRightChild());
+			} else {
+					if (currentNode.hasRightChild()){
+						nodeStack.push(currentNode.getRightChild());
+					}
+					if (currentNode.hasLeftChild()){
+						nodeStack.push(currentNode.getLeftChild());
+					}
+					if (currentNode.getData().compareTo(target) > 0) {
+						count++;
+					}
+				}
+		}
 		return count;
 	}
 		
